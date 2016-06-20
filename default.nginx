@@ -1,0 +1,27 @@
+server {
+	listen 80 default;
+
+	root /var/hello/;
+	index index.cgi index.htm index.html index.php index.pl;
+
+	keepalive_timeout 60;
+
+	location / {
+		autoindex on;
+	}
+
+	location ~ \.(cgi|pl)$ {
+		include fastcgi_params;
+		fastcgi_index index.cgi;
+		fastcgi_param SCRIPT_NAME $uri;
+		fastcgi_pass unix:/var/run/fcgiwrap.sock;
+	}
+
+	location ~ \.php$ {
+		include fastcgi_params;
+		fastcgi_index index.php;
+		fastcgi_pass unix:/var/run/php5-fpm.sock;
+		fastcgi_split_path_info ^(.+\.php)(/.+)$;
+	}
+}
+
