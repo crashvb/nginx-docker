@@ -1,0 +1,7 @@
+#!/bin/bash
+
+export SCRIPT_NAME=/var/hello/hello.php
+export SCRIPT_FILENAME=/var/hello/hello.php
+export REQUEST_METHOD=GET
+cgi-fcgi -bind -connect /var/run/php/php7.0-fpm.sock
+

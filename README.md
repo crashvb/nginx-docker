@@ -1,4 +1,4 @@
-# nginx
+# nginx-docker
 
 ## Overview
 
@@ -19,14 +19,16 @@ None.
 │  │  ├─ sites-available/
 │  │  │  └─ default
 │  │  └─ nginx.conf
-│  ├─ php5/
-│  │  └─ fpm/
-│  │     └─ php.ini
 │  └─ supervisor/
 │     └─ config.d/
 │        ├─ fcgi.conf
 │        ├─ nginx.conf
 │        └─ php.conf
+├─ usr/
+│   └─ local/
+│      └─ bin/
+│        ├─ test-cgi-fcgi
+│        └─ test-php-fpm
 └─ var/
    └─ hello/
       ├─ hello.cgi
