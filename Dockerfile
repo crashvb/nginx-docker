@@ -1,5 +1,5 @@
-FROM crashvb/supervisord:latest
-MAINTAINER Richard Davis <crashvb@gmail.com>
+FROM crashvb/supervisord:ubuntu
+LABEL maintainer="Richard Davis <crashvb@gmail.com>"
 
 # Install packages, download files ...
 RUN docker-apt fcgiwrap nginx php-apcu php7.0-cli php7.0-fpm
@@ -23,5 +23,8 @@ ADD test-* /usr/local/bin/
 ADD supervisord.fcgi.conf /etc/supervisor/conf.d/fcgi.conf
 ADD supervisord.nginx.conf /etc/supervisor/conf.d/nginx.conf
 ADD supervisord.php.conf /etc/supervisor/conf.d/php.conf
+
+# Configure: healthcheck
+ADD healthcheck.nginx /etc/healthcheck.d/nginx
 
 EXPOSE 80/tcp

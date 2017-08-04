@@ -8,6 +8,14 @@ This docker image contains [nginx](https://nginx.com/) with [cgi](https://en.wik
 
 None.
 
+## Healthcheck Scripts
+
+### nginx
+
+The embedded healthcheck script is located at `/etc/healthcheck.d/nginx` and performs the following actions:
+
+1. Verifies that perl and php are operational.
+
 ## Standard Configuration
 
 ### Container Layout
@@ -15,6 +23,8 @@ None.
 ```
 /
 ├─ etc/
+│  ├─ healthcheck.d/
+│  │  └─ nginx
 │  ├─ nginx/
 │  │  ├─ sites-available/
 │  │  │  └─ default

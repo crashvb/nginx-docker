@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+log "Checking if $(basename $0) is healthy ..."
+wget --output-document=- --quiet http://localhost/hello.cgi | grep --quiet "Hello CGI World"
+wget --output-document=- --quiet http://localhost/hello.html | grep --quiet "Hello HTML World"
+wget --output-document=- --quiet http://localhost/hello.php | grep --quiet "Hello PHP World"
+
