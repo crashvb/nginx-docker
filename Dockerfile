@@ -2,7 +2,7 @@ FROM crashvb/supervisord:ubuntu
 LABEL maintainer="Richard Davis <crashvb@gmail.com>"
 
 # Install packages, download files ...
-RUN docker-apt fcgiwrap nginx php-apcu php7.0-cli php7.0-fpm
+RUN docker-apt fcgiwrap nginx php-apcu php7.0-cli php7.0-fpm iproute2
 
 # Configure: hello
 ADD hello.* /var/hello/
