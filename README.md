@@ -48,7 +48,8 @@ The embedded healthcheck script is located at `/etc/healthcheck.d/nginx` and per
 
 ### Exposed Ports
 
-* `80/tcp` - nginx listening port.
+* `80/tcp` - insecure httpd listening port.
+* `443/tcp` - secure httpd listening port.
 
 ### Volumes
 
