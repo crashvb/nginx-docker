@@ -3,5 +3,5 @@
 set -e -o pipefail
 
 log "Checking if $(basename $0) is healthy ..."
-[[ $(pgrep --count --full nginx) -gt 0 ]]
+[[ $(pgrep --count --full php-fpm) -gt 0 ]]
 

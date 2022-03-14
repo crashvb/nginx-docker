@@ -37,6 +37,8 @@ ADD supervisord.nginx.conf /etc/supervisor/conf.d/nginx.conf
 ADD supervisord.php.conf /etc/supervisor/conf.d/php.conf
 
 # Configure: healthcheck
+ADD healthcheck.fcgi /etc/healthcheck.d/fcgi
 ADD healthcheck.nginx /etc/healthcheck.d/nginx
+ADD healthcheck.php /etc/healthcheck.d/php
 
 EXPOSE 80/tcp 443/tcp
