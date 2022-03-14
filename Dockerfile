@@ -14,7 +14,7 @@ LABEL \
 	org.opencontainers.image.url="https://github.com/crashvb/nginx-docker"
 
 # Install packages, download files ...
-RUN APT_ALL_REPOS=1 docker-apt fcgiwrap nginx php-apcu php-cli php-fpm
+RUN APT_ALL_REPOS=1 docker-apt fcgiwrap libfcgi-bin nginx php-apcu php-cli php-fpm
 
 # Configure: hello
 ADD hello.* /var/hello/
