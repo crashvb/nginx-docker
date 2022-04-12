@@ -1,5 +1,10 @@
 # nginx-docker
 
+[![version)](https://img.shields.io/docker/v/crashvb/nginx/latest)](https://hub.docker.com/repository/docker/crashvb/nginx)
+[![image size](https://img.shields.io/docker/image-size/crashvb/nginx/latest)](https://hub.docker.com/repository/docker/crashvb/nginx)
+[![linting](https://img.shields.io/badge/linting-hadolint-yellow)](https://github.com/hadolint/hadolint)
+[![license](https://img.shields.io/github/license/crashvb/nginx-docker.svg)](https://github.com/crashvb/nginx-docker/blob/master/LICENSE.md)
+
 ## Overview
 
 This docker image contains [nginx](https://nginx.com/) with [cgi](https://en.wikipedia.org/wiki/Common_Gateway_Interface) and [php](https://php.net/).

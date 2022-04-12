@@ -17,11 +17,11 @@ LABEL \
 RUN APT_ALL_REPOS=1 docker-apt fcgiwrap libfcgi-bin nginx php-apcu php-cli php-fpm
 
 # Configure: hello
-ADD hello.* /var/hello/
+COPY hello.* /var/hello/
 RUN chown --recursive root:root /var/hello
 
 # Configure: nginx
-ADD default.nginx /etc/nginx/sites-available/default
+COPY default.nginx /etc/nginx/sites-available/default
 RUN mkdir --parents /var/www && \
 	sed --in-place "/pid \/run\/nginx.pid;/a daemon off;" /etc/nginx/nginx.conf
 
@@ -29,16 +29,16 @@ RUN mkdir --parents /var/www && \
 RUN install --directory --group=www-data --mode=0755 --owner=www-data /var/run/php
 
 # Configure: diagnostics
-ADD test-* /usr/local/bin/
+COPY test-* /usr/local/bin/
 
 # Configure: supervisor
-ADD supervisord.fcgi.conf /etc/supervisor/conf.d/fcgi.conf
-ADD supervisord.nginx.conf /etc/supervisor/conf.d/nginx.conf
-ADD supervisord.php.conf /etc/supervisor/conf.d/php.conf
+COPY supervisord.fcgi.conf /etc/supervisor/conf.d/fcgi.conf
+COPY supervisord.nginx.conf /etc/supervisor/conf.d/nginx.conf
+COPY supervisord.php.conf /etc/supervisor/conf.d/php.conf
 
 # Configure: healthcheck
-ADD healthcheck.fcgi /etc/healthcheck.d/fcgi
-ADD healthcheck.nginx /etc/healthcheck.d/nginx
-ADD healthcheck.php /etc/healthcheck.d/php
+COPY healthcheck.fcgi /etc/healthcheck.d/fcgi
+COPY healthcheck.nginx /etc/healthcheck.d/nginx
+COPY healthcheck.php /etc/healthcheck.d/php
 
 EXPOSE 80/tcp 443/tcp
