@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e -o pipefail
+
+# Configure: nginx
+if [[ ! -e "${EP_RUN}" ]] ; then
+	log "Configuring $(basename "${0}") for first run ..."
+
+	# Generate keypairs ...
+	generate_rsakey nginx
+
+	ln --symbolic /etc/ssl/certs/nginxca.crt /usr/share/ca-certificates/
+	echo nginxca.crt >> /etc/ca-certificates.conf
+	update-ca-certificates
+fi
+

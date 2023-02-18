@@ -39,6 +39,11 @@ The embedded healthcheck script is located at `/etc/healthcheck.d/nginx` and per
 │        ├─ fcgi.conf
 │        ├─ nginx.conf
 │        └─ php.conf
+├─ run/
+│  └─ secrets/
+│     ├─ nginx.crt
+│     ├─ nginx.key
+│     └─ nginxca.crt
 ├─ usr/
 │   └─ local/
 │      └─ bin/

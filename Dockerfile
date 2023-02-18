@@ -36,6 +36,9 @@ COPY supervisord.fcgi.conf /etc/supervisor/conf.d/fcgi.conf
 COPY supervisord.nginx.conf /etc/supervisor/conf.d/nginx.conf
 COPY supervisord.php.conf /etc/supervisor/conf.d/php.conf
 
+# Configure: entrypoint
+COPY entrypoint.nginx /etc/entrypoint.d/nginx
+
 # Configure: healthcheck
 COPY healthcheck.fcgi /etc/healthcheck.d/fcgi
 COPY healthcheck.nginx /etc/healthcheck.d/nginx
