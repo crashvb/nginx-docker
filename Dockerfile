@@ -23,7 +23,9 @@ RUN chown --recursive root:root /var/hello
 # Configure: nginx
 COPY default.nginx /etc/nginx/sites-available/default
 RUN mkdir --parents /var/www && \
-	sed --in-place "/pid \/run\/nginx.pid;/a daemon off;" /etc/nginx/nginx.conf
+	sed --expression="/access_log/caccess_log \/dev\/stdout;" \
+		--expression="/error_log/cerror_log stderr warn;" \
+		--in-place=.dist /etc/nginx/nginx.conf
 
 # Configure: php-fpm
 RUN install --directory --group=www-data --mode=0755 --owner=www-data /var/run/php
