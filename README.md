@@ -11,15 +11,31 @@ This docker image contains [nginx](https://nginx.com/) with [cgi](https://en.wik
 
 ## Entrypoint Scripts
 
-None.
+### nginx
+
+The embedded entrypoint script is located at `/etc/entrypoint.d/nginx` and performs the following actions:
+
+1. The PKI certificates are generated or imported.
 
 ## Healthcheck Scripts
+
+### fcgi
+
+The embedded healthcheck script is located at `/etc/healthcheck.d/fcgi` and performs the following actions:
+
+1. Verifies that the fcgi wrapper is operational.
 
 ### nginx
 
 The embedded healthcheck script is located at `/etc/healthcheck.d/nginx` and performs the following actions:
 
-1. Verifies that perl and php are operational.
+1. Verifies that nginx is operational.
+
+### php
+
+The embedded healthcheck script is located at `/etc/healthcheck.d/php` and performs the following actions:
+
+1. Verifies php is operational.
 
 ## Standard Configuration
 
@@ -28,8 +44,12 @@ The embedded healthcheck script is located at `/etc/healthcheck.d/nginx` and per
 ```
 /
 ├─ etc/
-│  ├─ healthcheck.d/
+│  ├─ entrypoint.d/
 │  │  └─ nginx
+│  ├─ healthcheck.d/
+│  │  ├─ fcgi
+│  │  ├─ nginx
+│  │  └─ php
 │  ├─ nginx/
 │  │  ├─ sites-available/
 │  │  │  └─ default
