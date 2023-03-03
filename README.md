@@ -17,26 +17,6 @@ The embedded entrypoint script is located at `/etc/entrypoint.d/nginx` and perfo
 
 1. The PKI certificates are generated or imported.
 
-## Healthcheck Scripts
-
-### fcgi
-
-The embedded healthcheck script is located at `/etc/healthcheck.d/fcgi` and performs the following actions:
-
-1. Verifies that the fcgi wrapper is operational.
-
-### nginx
-
-The embedded healthcheck script is located at `/etc/healthcheck.d/nginx` and performs the following actions:
-
-1. Verifies that nginx is operational.
-
-### php
-
-The embedded healthcheck script is located at `/etc/healthcheck.d/php` and performs the following actions:
-
-1. Verifies php is operational.
-
 ## Standard Configuration
 
 ### Container Layout
