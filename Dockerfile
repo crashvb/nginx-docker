@@ -1,10 +1,10 @@
-FROM crashvb/supervisord:202303031721@sha256:6ff97eeb4fbabda4238c8182076fdbd8302f4df15174216c8f9483f70f163b68
+FROM crashvb/supervisord:202303080202@sha256:1f8c30393b8b6851a2a5751614e72c20b644753cfe5aea4ba317238edcead216
 ARG org_opencontainers_image_created=undefined
 ARG org_opencontainers_image_revision=undefined
 LABEL \
 	org.opencontainers.image.authors="Richard Davis <crashvb@gmail.com>" \
-	org.opencontainers.image.base.digest="sha256:6ff97eeb4fbabda4238c8182076fdbd8302f4df15174216c8f9483f70f163b68" \
-	org.opencontainers.image.base.name="crashvb/supervisord:202303031721" \
+	org.opencontainers.image.base.digest="sha256:1f8c30393b8b6851a2a5751614e72c20b644753cfe5aea4ba317238edcead216" \
+	org.opencontainers.image.base.name="crashvb/supervisord:202303080202" \
 	org.opencontainers.image.created="${org_opencontainers_image_created}" \
 	org.opencontainers.image.description="Image containing nginx." \
 	org.opencontainers.image.licenses="Apache-2.0" \
